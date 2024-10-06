@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
                 android:text="@string/area_placeholder"
-                android:textColor="@color/material_dynamic_primary40"
+                android:textColor="@color/material_dynamic_primary60"
                 android:textSize="96sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
                 android:text="@string/region_placeholder"
-                android:textColor="@color/material_dynamic_neutral60"
+                android:textColor="@color/material_dynamic_neutral70"
                 android:textSize="34sp"
                 app:layout_constraintBottom_toTopOf="@+id/areaCode"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
                 android:text="@string/plus_placeholder"
-                android:textColor="@color/material_dynamic_secondary30"
+                android:textColor="@color/material_dynamic_secondary40"
                 android:textSize="48sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,6 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fadeScrollbars="true"
+                android:gravity="center"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +96,16 @@
                     android:layout_height="wrap_content"
                     android:text="@string/share"
                     app:icon="@drawable/baseline_share_24" />
+
+                <Button
+                    android:id="@+id/maps"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/copy"
+                    app:icon="@drawable/baseline_map_24" />
             </LinearLayout>
 
             <TextView

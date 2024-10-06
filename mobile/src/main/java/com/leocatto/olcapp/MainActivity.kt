@@ -12,6 +12,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var approxLabel: TextView
     lateinit var shareButton: Button
     lateinit var copyButton: Button
+    lateinit var mapsButton: Button
 
     private var snackbar: Snackbar? = null
 
@@ -61,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         approxLabel = findViewById<TextView>(R.id.approxLocationWarning)
         shareButton = findViewById<Button>(R.id.share)
         copyButton = findViewById<Button>(R.id.copy)
+        mapsButton = findViewById<Button>(R.id.maps)
 
         appState = OlcAppState(
             this,
@@ -91,6 +94,16 @@ class MainActivity : AppCompatActivity() {
                     appState.fullLocationCode
                 )
             )
+        }
+        mapsButton.setOnClickListener {
+            if(appState.fullLocationCode == null) return@setOnClickListener
+            val gmmIntentUri = Uri.parse("http://plus.codes/${appState.fullLocationCode}")
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            mapIntent.setPackage("com.google.android.apps.maps")
+            if(mapIntent.resolveActivity(packageManager) != null) {
+                startActivity(mapIntent)
+            }
+            else Toast.makeText(this, "App Not Installed", Toast.LENGTH_SHORT).show()
         }
 
         val locationPermissionRequest = registerForActivityResult(
