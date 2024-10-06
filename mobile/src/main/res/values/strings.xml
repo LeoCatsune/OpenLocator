@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">OpenLocator</string>
+    <string name="using_approx_location">(Using Approximate Location)</string>
+    <string name="region_placeholder" translatable="false">XXXX</string>
+    <string name="area_placeholder" translatable="false">YYYY</string>
+    <string name="plus_placeholder" translatable="false">+ZZ</string>
+    <string name="share">Share</string>
+    <string name="copy">Copy</string>
+    <string name="last_updated">Last Updated: %1$s</string>
+    <string name="last_updated_placeholder">Last Updated: ----</string>
+</resources>
